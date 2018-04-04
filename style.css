@@ -1,3 +1,15 @@
+.buttons {
+	display: inline-block;
+	margin-left: 35%;
+}
+
+button {
+	display: inline-block;
+	padding: 10px 30px;
+	font-size: 20px;
+	margin: 20px;
+}
+
 .container {
 	display: block;
 	margin: 0 auto;

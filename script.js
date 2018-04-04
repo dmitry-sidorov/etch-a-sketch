@@ -1,6 +1,27 @@
 let area = 16; //prompt('Enter side length of the area:');
 let squareSide = 960 / area;
 let container = document.querySelector('.container');
+let btnClear = document.querySelector('.clear');
+let btnRainbow = document.querySelector('.rainbow');
+let result = btnClear.addEventListener('click', (e) => {
+	area = prompt('Enter side length:');
+	createArea(area);
+});
+
+console.log(result);
+createArea(area);
+
+function createArea(area) {
+	for (let i = 0; i < area**2; i++) {
+		container.appendChild(createSquare(i));
+	}
+}
+container.addEventListener('mouseover', (e) => {
+	let squareOverMouseId = e.target.getAttribute('id');
+	let squareToPaint = document.getElementById(squareOverMouseId);
+	squareToPaint.style.backgroundColor = randomColor();
+	});
+
 function createSquare(id) {
 	let square = document.createElement('div');
 	square.setAttribute('class', 'square');
@@ -12,14 +33,6 @@ function createSquare(id) {
 	square.style.boxSizing = 'border-box';
 	return square;
 }
-for (let i = 0; i < area**2; i++) {
-	container.appendChild(createSquare(i));
-}
-container.addEventListener('mouseover', (e) => {
-	let squareOverMouseId = e.target.getAttribute('id');
-	let squareToPaint = document.getElementById(squareOverMouseId);
-	squareToPaint.style.backgroundColor = randomColor();
-	});
 
 function randomColor() {
 	let color = "#";
