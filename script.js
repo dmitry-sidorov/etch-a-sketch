@@ -1,4 +1,4 @@
-let area = 16; //prompt('Enter side length of the area:');
+let area = 24; //prompt('Enter side length of the area:');
 let squareSide = 960 / area;
 let container = document.querySelector('.container');
 let btnClear = document.querySelector('.clear');
@@ -8,7 +8,7 @@ let result = btnClear.addEventListener('click', (e) => {
 	createArea(area);
 });
 
-console.log(result);
+
 createArea(area);
 
 function createArea(area) {
