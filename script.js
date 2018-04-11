@@ -1,15 +1,31 @@
 let area = 24; //prompt('Enter side length of the area:');
-let squareSide = 960 / area;
+
+//let sideByDefault = true;
 let container = document.querySelector('.container');
 let btnClear = document.querySelector('.clear');
 let btnRainbow = document.querySelector('.rainbow');
-let result = btnClear.addEventListener('click', (e) => {
+btnClear.addEventListener('click', (e) => {
+	//let sideByDefault = false;
 	area = prompt('Enter side length:');
-	createArea(area);
 });
 
 
+main(area);
+
+function main(area) {
+	
+
+
+/*let area = 24;
+if (sideByDefault === false) {
+	area = prompt('Enter side length:');
+}*/
+let squareSide = 960 / area;
 createArea(area);
+
+
+
+
 
 function createArea(area) {
 	for (let i = 0; i < area**2; i++) {
@@ -63,4 +79,5 @@ function randomNumber() {
 		break;
 		default: return num;
 	}
+}
 }
